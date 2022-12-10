@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    letter-spacing: 1.3px;
+    font-weight: bold;
+    font-size: 1rem;
+    word-spacing: 3px;
+}
+body{
+    position: relative;
+   
+}
+
+header{
+    height: 10vh;
+    background-color: rgba(116, 41, 228, 0.477);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 100;
+    box-shadow: 0px 15px 30px black !important;
+}
+
+main{
+    padding: 50px 30px 10px ;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 79vh;
+    margin-top: 5px;
+    background-color: rgba(90, 90, 88, 0.527);
+}
+.toolbar{
+    width: 23%;
+    display: flex;
+    flex-direction: column;
+}
+.product-details,.payment-details{
+ display: flex;
+ flex-direction: column;   
+ height: 40vh;
+ gap: 10px;
+}
+
+.table-div{
+    width: 75%;
+}
+
+
+
+
+.edit-box{
+    background-color: rgba(0, 0, 0, 0.747);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: ani ;
+    animation-duration: 1s;
+}
+.closeBtn{
+    position: absolute;
+    top: 40px;
+    right: 210px;
+    scale: 3;
+  background-color: red;
+
+}
+.box{
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 400px;
+    height: 250px;
+    background-color: rgba(255, 255, 255, 0.687);
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px  rgba(116, 41, 228, 0.477);;
+}
+.custom,td,th, header label{
+    border: 2px solid white !important;
+}
+
+header label
+{
+    padding:  10px 15px !important;
+    box-shadow: 0px 0px 5px white;
+    border-radius: 5px;
+}
+table{
+    overflow-y: scroll ;
+    position: relative !important;
+}
+thead{
+    position: sticky !important;
+    top: 0;
+    box-shadow: 0px -4px 3px 3px white;
+    background-color: rgba(90, 90, 88, 1) ;
+}
+footer{
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(116, 41, 228, 0.477);
+}
+
+@keyframes ani {
+    0%{
+        transform: scale(0);
+    }
+    100%{
+    transform: scale(1);
+    }
+
+}

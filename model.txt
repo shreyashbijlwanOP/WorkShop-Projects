@@ -1,0 +1,30 @@
+model = {
+        id:"1"
+        customerName:"shreyash",
+        vehicleNumber:"UK12A8834",
+        mobile:"7895672794",
+        date:"new Date() toString()",
+
+        bill: {
+                billAmount:3000
+                itemList:[
+                    {   productId:1
+                        productName:"Oil",
+                        productQuantity:1,
+                        productPrice:300,
+                        totalAmount: 0,
+                    }
+                    {   ProductId:2,
+                        productName:"washer",
+                        productQuantity:2,
+                        productPrice:20,
+                        totalAmount: 0, 
+                    }
+                ] 
+            },
+            billStatus:{
+                paymentMode:"cash|online|N/A",
+                paidAmount: 0,
+                paymentStatus:"paid | notPaid | partialPaid",
+                remainingAmount:0,
+            }

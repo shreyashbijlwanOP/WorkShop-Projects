@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bill Page</title>
+
+    <!-- CDNs -->
+    <!-- BootStrap CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+
+    <!-- JavaScript Bundle with Popper BOOTSTRAP -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- FontAwesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Personal StyleSheet -->
+
+    <link rel="stylesheet" href="../styles/billpage.css" />
+
+    <!-- CDNs -->
+  </head>
+  <body>
+    <header>
+      <label title="customerName">customerName</label>
+      <label title="vehicleNumber">vehicleNumber</label>
+      <label title="mobile">mobile</label>
+      <a class="btn btn-warning fs-5" onclick="editCustomerDetails()"
+        >Update </a
+        >
+        <a href="./index.html" target="_blank" class="btn btn-primary">
+          <i class="fa-solid fa-person-biking fs-1"></i>
+        </a>
+        <span class="btn btn-danger"> <span id="deleteUser" name="deleteUser" class="fs-4" onclick="deleteUser()" >Delete</span></span>
+      <span class="btn btn-danger fs-4"> ₹ <span id="billAmount" name="billAmount" class="fs-4" >billAmount</span></span>
+
+        
+
+    </header>
+
+    <main>
+      <!-- tools Section -->
+      <div class="toolbar">
+        <!-- ProductDetails Section -->
+        <div class="product-details">
+          <!-- Product List  -->
+         
+          <!-- Product Name  -->
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text fw-bold">Item</div>
+          </div>
+          <input
+          type="text"
+          name="productName"
+          id="productName"
+          list="list"
+          placeholder="Item"
+          class="form-control fw-bold "
+        />
+        <datalist id="list">
+   
+        </datalist>
+
+        </div>
+          
+        <!-- Product Quantity -->
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text fw-bold">Qty</div>
+          </div>
+          <input
+          type="number"
+          name="productQuantity"
+          id="productQuantity"
+          placeholder="Qty"
+          class="form-control fw-bold"
+        />
+        </div>
+
+        <!-- Product Price  -->
+
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text fw-bold">₹</div>
+          </div>
+
+          <input
+          type="number"
+          name="productPrice"
+          id="productPrice"
+          placeholder="₹"
+          class="form-control fw-bold "
+        />
+        </div>          
+          <button id="saveItem" onclick="AddToProductList()" class="btn btn-primary">Save Items</button>
+          <!-- Product List  -->
+        </div>
+        <!-- PaymentDetails Section -->
+        <div class="payment-details">
+          <!-- Payment Mode -->
+          <select name="paymentMode" id="paymentMode" class="form-select">
+            <option value="N/A">--PaymentMode--</option>
+            <option value="Cash">Cash</option>
+            <option value="Online">Online</option>
+            <option value="Credit">Credit</option>
+         
+          </select>
+          <!-- Payment Mode -->
+
+          <!-- Bill Status -->
+
+          <select name="billStatus" id="billStatus" class="form-select">
+            <option value="N/A">--Bill Status--</option>
+            <option value="Received">paid</option>
+            <option value="Not Paid">Not Paid</option>
+            <option value="Balance">Balance</option>
+            <option value="Advance">Advance</option>
+          </select>
+
+          <!-- Paid Amount Element -->
+
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text fw-bold">Paid Amount</div>
+            </div>
+            <input
+            type="number"
+            id="paidAmount"
+            name="paidAmount"
+            placeholder="Paid Amount"
+            class="form-control"/>
+          </div>
+          <button onclick="saveBill()" class="btn btn-primary fw-bold">Save Bill</button>
+          <!-- Bill Status -->
+          <!-- SELECT BILL -->
+        </div>
+      </div>
+
+      <!-- table Section -->
+      <div class="table-div table-responsive">
+       <table class="table table-bordered  custom">
+        <thead class="">
+          <tr>
+          <th width="7%">S.No</th>
+          <th width = 45%>Item</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th width="10%">Amount</th>
+          <th>Action</th>
+          </tr>
+        </thead>
+        <!--  Table-Body Goes here -->
+        <tbody id="output">
+
+        </tbody>
+
+       </table>
+      </div>
+
+      <div class="edit-box d-none" id="edit-box">
+        <div class="btn btn-close closeBtn" onclick="Close()" ></div>
+        <div class="box">
+                    <!-- Product List  -->
+         
+          <!-- Product Name  -->
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text fw-bold">Item</div>
+          </div>
+          <input
+          type="text"
+          name="productName"
+          placeholder="Item"
+          class="form-control fw-bold "
+        />
+        </div>
+          
+        <!-- Product Quantity -->
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text fw-bold">Qty</div>
+          </div>
+          <input
+          type="number"
+          name="productQuantity"
+          placeholder="Qty"
+          class="form-control fw-bold"
+        />
+        </div>
+
+        <!-- Product Price  -->
+
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text fw-bold">₹</div>
+          </div>
+
+          <input
+          type="number"
+          name="productPrice"
+          placeholder="₹"
+          class="form-control fw-bold "
+        />
+        </div>
+
+      <div>
+        <button class="btn btn-warning" onclick="UpdateItem()">Update</button>
+        <button class="btn btn-danger" onclick="Close()" >Cancel</button>
+      </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+  
+      <span id="footer-output" class="fs-5"></span>
+      <a href="./displayPage.html" class="btn btn-success"> Display All </a>
+      <a href="./AddProduct.html" class="btn btn-dark"> Add Product  </a>
+    </footer>
+    <script src="../scripts/billPage.js"></script>
+  </body>
+</html>

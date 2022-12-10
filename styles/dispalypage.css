@@ -1,0 +1,65 @@
+*{
+    margin: 0;padding: 0;box-sizing: border-box;
+}
+header{
+position: relative;
+display: flex;
+height: 15vh;
+align-items: flex-start;
+justify-content: space-around;
+}
+select{
+    width: 300px !important;
+}
+menu{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+ul{
+    list-style: none;
+    height: 100px;
+    width: 150px;
+    left: -35px;
+    display: none;
+    position: absolute;
+    top: 40px;
+    
+    background-color: white;
+    border-radius: 1px solid black ;
+    box-shadow: 0px 0px 5px black;
+}
+li a{
+    padding: 5px 20px 5px 0px;
+    text-decoration: none;
+    color: black;
+}
+.bg-red{
+    color: red !important;
+}
+.bg-green{
+    color: green !important;
+}
+td{
+    font-weight: bold;
+}
+
+/* style sheet for "A4" printing */
+@media print and (width: 21cm) and (height: 29.7cm) {
+    @page {
+       margin: 3cm;
+    }
+}
+
+/* style sheet for "letter" printing */
+@media print and (width: 8.5in) and (height: 11in) {
+   @page {
+       margin: 1in;
+   }
+}
+
+/* A4 Landscape*/
+@page {
+   size: A4 landscape;
+   margin: 10%;
+}

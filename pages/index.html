@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hans Enterprize's</title>
+
+    <!-- CDNs -->
+    <!-- BootStrap CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+
+    <!-- JavaScript Bundle with Popper BOOTSTRAP -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- FontAwesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Personal StyleSheet -->
+
+    <link rel="stylesheet" href="../styles/index.css" />
+
+    <!-- jQuery  -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+
+    <!-- CDNs -->
+  </head>
+  <body>
+    <header>
+      <h1>Welcome To Hans Enterprize</h1>
+      <menu>
+        <button class="menu btn btn-primary">Menu</button>
+        <ul>
+          <li> <a href="./index.html"> Home Page </a></li>
+          <li> <a href="./displayPage.html"> All Bills </a></li>
+          <li> <a href="./AddProduct.html"> Add Product To Store</a></li>
+        </ul>
+      </menu>
+
+    </header>
+
+    <main>
+      <section>
+        <h2 class="text-decoration-underline">Add New Customer Here</h2>
+        <p >Welcome,We are Here To help you.</p>
+        <p >Your all Two Wheeler Solution </p>
+    </section>
+    
+    <div class="vertical-line"></div>
+      <form onsubmit="event.preventDefault()">
+        <input
+          type="text"
+          name="customerName"
+          id="customerName"
+          placeholder="ग्राहक का नाम"
+          class="form-control mb-2"
+        />
+        <input
+          type="text"
+          name="vehicleNumber"
+          id="vehicleNumber"
+          placeholder="गाड़ी नंबर"
+          class="form-control mb-2"
+        />
+        <input
+          type="tel"
+          id="mobile"
+          name="mobile"
+          maxlength="10"
+          minlength="10"
+          placeholder="mobile"
+          class="form-control mb-2"
+        />
+        <button id="cusSave"  class="btn btn-primary" onclick="Add()">
+          Add
+        </button>
+      </form>
+    </main>
+
+    <script src="../scripts/index.js"></script>
+    <script>
+      $(".menu").click(function(){
+        $("ul").slideToggle("normal")
+      })
+      console.log(document.querySelector("form input"))
+    </script>
+  </body>
+</html>
