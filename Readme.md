@@ -13,5 +13,5 @@ Some ScreenShots of Project how it Look
 
 ### Home Page
 
-![Home](/Mokeups/Home%20Page.png) 
+![Home](./Mokeups/HomePage.png) 
 
