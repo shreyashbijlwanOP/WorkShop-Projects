@@ -9,7 +9,7 @@ https://github.com/shreyashbijlwanOP/WorkShop-Projects
 
 Some ScreenShots of Project how it Look
 ### This is Home Page Preview
-<img src="./Mokeups/Home Page.png"/>
+<img src="./Mokeups/Home Page.png" loading ="lazgit y"/>
 
 <br/>
 
