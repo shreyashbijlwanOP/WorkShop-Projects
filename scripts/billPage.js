@@ -191,7 +191,7 @@ if (res)
 {
   store.delete(id)
   alert("deleted SuccessFully")
-  window.location.replace("index.html")
+  window.location.replace("../index.html")
 }
 
 }

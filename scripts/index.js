@@ -76,7 +76,7 @@ function Add()
     console.log(storeData.getCollection)
     alert("Customer Added Successfully")
 
-    window.location.replace(`BillPage.html?id=${tempModel.id}`)
+    window.location.replace(`./pages/BillPage.html?id=${tempModel.id}`)
    
 }
 
