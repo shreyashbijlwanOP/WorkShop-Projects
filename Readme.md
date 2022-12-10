@@ -9,7 +9,7 @@ https://github.com/shreyashbijlwanOP/WorkShop-Projects
 
 Some ScreenShots of Project how it Look
 ### This is Home Page Preview
-<img src="Mokeups/Home Page.png" loading ="lazy"/>
+![homepage]("Mokeups/Home Page.png") 
 
 <br/>
 
